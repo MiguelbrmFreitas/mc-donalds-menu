@@ -14,3 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Mc Donald's Menu"
 include ':app'
+include ':domain'
+include ':data'
