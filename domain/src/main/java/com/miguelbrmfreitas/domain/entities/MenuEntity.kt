@@ -1,6 +1,6 @@
 package com.miguelbrmfreitas.domain.entities
 
-data class Menu(
-    val items: List<Item>,
+data class MenuEntity(
+    val items: List<ItemEntity>,
     val name: String
 )

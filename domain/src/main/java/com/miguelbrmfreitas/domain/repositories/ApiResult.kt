@@ -1,15 +1,17 @@
 package com.miguelbrmfreitas.domain.repositories
 
 import java.lang.Exception
+import java.lang.reflect.ParameterizedType
+import java.lang.reflect.Type
 
-sealed class ApiResult<out T> {
-    data class Success<T>(val data: T?, val token: String) : ApiResult<T>()
+sealed class ApiResult<out R> {
+    data class Success<out T>(val data: T) : ApiResult<T>()
     data class Failure(val exception: Exception): ApiResult<Nothing>()
 
     override fun toString(): String {
         return when (this) {
             is Success<*> -> "Success data: $data]"
-            is Failure -> "Error exception: $exception]"
+            is Failure -> "Error exception: ${exception.message}]"
         }
     }
 }

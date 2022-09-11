@@ -2,7 +2,6 @@ package com.miguelbrmfreitas.data.datasources.remote
 
 import android.app.appsearch.GetByDocumentIdRequest
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-import com.miguelbrmfreitas.domain.entities.McDonaldsResponse
 import com.miguelbrmfreitas.domain.repositories.McDonaldsRepository
 import com.miguelbrmfreitas.domain.usecases.GetMenusUseCase
 import com.squareup.moshi.Moshi
@@ -16,24 +15,21 @@ import retrofit2.converter.scalars.ScalarsConverterFactory
 import java.util.concurrent.TimeUnit
 
 private const val TIME_OUT = 30L
-private const val BASE_URL = "https://mcdonalds.trio.dev"
+private const val BASE_URL = "https://mcdonalds.trio.dev/"
 
 val remoteDataModule = module {
     single { createService(get()) }
 
-    single { createRetrofit(get(), get(), BASE_URL) }
+    single { createRetrofit(get(), BASE_URL) }
 
     single { createOkHttpClient(get()) }
 
     single { createLoggingInterceptor() }
 
-    single { createMoshiBuilder() }
-
 }
 
 fun createMoshiBuilder(): Moshi {
-    return Moshi.Builder()
-        .add(KotlinJsonAdapterFactory()).build()
+    return Moshi.Builder().build()
 }
 
 fun createLoggingInterceptor(): HttpLoggingInterceptor {
@@ -49,7 +45,14 @@ fun createOkHttpClient(loggingInterceptor: HttpLoggingInterceptor): OkHttpClient
         .addInterceptor(loggingInterceptor).build()
 }
 
-fun createRetrofit(okHttpClient: OkHttpClient, moshi: Moshi, url: String): Retrofit {
+fun createRetrofit(okHttpClient: OkHttpClient, url: String): Retrofit {
+    val moshi by lazy {
+        val moshiBuilder = Moshi.Builder()
+            .add(KotlinJsonAdapterFactory())
+        moshiBuilder.build()
+    }
+
+
     return Retrofit.Builder()
         .baseUrl(url)
         .client(okHttpClient)

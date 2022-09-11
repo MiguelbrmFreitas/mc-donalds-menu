@@ -1,9 +1,9 @@
 package com.miguelbrmfreitas.domain.repositories
 
-import com.miguelbrmfreitas.domain.entities.McDonaldsResponse
+import com.miguelbrmfreitas.domain.entities.MenuEntity
 
 
 interface McDonaldsRepository
 {
-    suspend fun getMenus(): ApiResult<McDonaldsResponse>
+    suspend fun getMenus(): ApiResult<List<MenuEntity>>
 }

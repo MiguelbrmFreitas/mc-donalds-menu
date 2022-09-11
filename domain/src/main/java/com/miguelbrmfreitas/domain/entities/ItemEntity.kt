@@ -1,6 +1,6 @@
 package com.miguelbrmfreitas.domain.entities
 
-data class Item(
+data class ItemEntity(
     val description: String,
     val name: String,
     val price: Double,
