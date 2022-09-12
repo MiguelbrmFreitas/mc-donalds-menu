@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.McDonaldsMenu">
         <activity
-            android:name=".ui.menu.MenuListActivity"
+            android:name=".ui.menu.activity.MenuListActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
