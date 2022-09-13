@@ -68,13 +68,14 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="20dp"
                 android:id="@+id/cv_price"
+                app:cardCornerRadius="50dp"
                 >
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/bg_price_label"
                     android:id="@+id/cl_price"
+                    android:background="@drawable/bg_price_label"
                     >
 
                     <TextView
