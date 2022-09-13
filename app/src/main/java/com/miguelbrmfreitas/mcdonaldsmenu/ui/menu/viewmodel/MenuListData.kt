@@ -8,7 +8,5 @@ class MenuListData
 {
     val recyclerMenus: ObservableField<RecyclerComponent> = ObservableField()
 
-    val progressVisibility: ObservableField<Int> = ObservableField(View.GONE)
-
-    val textTest: ObservableField<String> = ObservableField("")
+    val progressVisibility: ObservableField<Int> = ObservableField(View.VISIBLE)
 }

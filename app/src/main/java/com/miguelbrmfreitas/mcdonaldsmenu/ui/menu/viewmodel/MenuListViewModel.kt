@@ -1,5 +1,6 @@
 package com.miguelbrmfreitas.mcdonaldsmenu.ui.menu.viewmodel
 
+import android.view.View
 import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.miguelbrmfreitas.domain.repositories.ApiResult
@@ -30,11 +31,11 @@ class MenuListViewModel(private val getMenusUseCase: GetMenusUseCase, val menuLi
                                 )
                             )
 
-                            textTest.set(menuList[0].name)
-                        }
+                            menusAdapter.clear()
+                            menusAdapter.addAll(menuList)
 
-                        menusAdapter.clear()
-                        menusAdapter.addAll(menuList)
+                            progressVisibility.set(View.GONE)
+                        }
                     }
                 }
                 is ApiResult.Failure -> {
