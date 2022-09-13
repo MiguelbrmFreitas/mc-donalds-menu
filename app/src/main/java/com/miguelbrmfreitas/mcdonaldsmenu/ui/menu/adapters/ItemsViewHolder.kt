@@ -7,7 +7,8 @@ import com.miguelbrmfreitas.mcdonaldsmenu.ui.utils.extensions.setImageUrl
 
 class ItemsViewHolder (
     private val items: ArrayList<ItemEntity>,
-    val view: AdapterItemBinding
+    val view: AdapterItemBinding,
+    private val listener: ItemAdapterListener?
 ) : RecyclerView.ViewHolder(view.root)
 {
     fun onBind(position: Int) {
@@ -16,6 +17,10 @@ class ItemsViewHolder (
         view.apply {
             itemName = items[position].name
             ivItem.setImageUrl(context, items[position].url)
+
+            itemView.setOnClickListener {
+                listener?.onItemClicked(items[position])
+            }
         }
     }
 }

@@ -12,6 +12,7 @@ import com.miguelbrmfreitas.mcdonaldsmenu.databinding.AdapterMenuBinding
 class MenusAdapter : RecyclerView.Adapter<MenusViewHolder>()
 {
     private val menus: ArrayList<MenuEntity> = arrayListOf()
+    private var listener: ItemAdapterListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenusViewHolder {
         val view = DataBindingUtil.inflate<AdapterMenuBinding>(
@@ -23,7 +24,8 @@ class MenusAdapter : RecyclerView.Adapter<MenusViewHolder>()
 
         return MenusViewHolder(
             view = view,
-            menus = this.menus
+            menus = this.menus,
+            listener = listener
         )
     }
 
@@ -33,8 +35,9 @@ class MenusAdapter : RecyclerView.Adapter<MenusViewHolder>()
 
     override fun getItemCount() = menus.size
 
-    fun addAll(menus: List<MenuEntity>) {
+    fun addAll(menus: List<MenuEntity>, listener: ItemAdapterListener) {
         this.menus.addAll(menus)
+        this.listener = listener
         notifyDataSetChanged()
     }
 

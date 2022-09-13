@@ -12,6 +12,7 @@ import com.miguelbrmfreitas.mcdonaldsmenu.databinding.AdapterItemBinding
 class ItemsAdapter : RecyclerView.Adapter<ItemsViewHolder>()
 {
     private val items: ArrayList<ItemEntity> = arrayListOf()
+    private var listener: ItemAdapterListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemsViewHolder {
         val view = DataBindingUtil.inflate<AdapterItemBinding>(
@@ -23,7 +24,8 @@ class ItemsAdapter : RecyclerView.Adapter<ItemsViewHolder>()
 
         return ItemsViewHolder(
             view = view,
-            items = items
+            items = items,
+            listener = listener
         )
     }
 
@@ -34,8 +36,9 @@ class ItemsAdapter : RecyclerView.Adapter<ItemsViewHolder>()
     override fun getItemCount() = items.size
 
     @SuppressLint("NotifyDataSetChanged")
-    fun addAll(items: List<ItemEntity>) {
+    fun addAll(items: List<ItemEntity>, listener: ItemAdapterListener?) {
         this.items.addAll(items)
+        this.listener = listener
         notifyDataSetChanged()
     }
 

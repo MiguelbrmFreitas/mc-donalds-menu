@@ -17,7 +17,7 @@ fun ImageView.setImageUrl(
                     .with(this)
                     .asDrawable()
                     .load(url)
-                    .apply(RequestOptions().override(context.dpToPx(100.0f), context.dpToPx(100.0f)))
+                    .apply(RequestOptions().override(830, 456))
                     .into(this@setImageUrl)
             }
         }, 0)
