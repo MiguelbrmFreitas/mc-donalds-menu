@@ -1,4 +1,4 @@
-package com.miguelbrmfreitas.mcdonaldsmenu.ui
+package com.miguelbrmfreitas.mcdonaldsmenu.application
 
 import android.app.Application
 import androidx.multidex.MultiDex
