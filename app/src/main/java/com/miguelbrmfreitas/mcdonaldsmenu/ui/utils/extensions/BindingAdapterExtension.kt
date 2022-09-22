@@ -7,9 +7,6 @@ import com.miguelbrmfreitas.mcdonaldsmenu.ui.utils.components.RecyclerComponent
 
 @BindingAdapter("bindRecycler")
 fun setAdapter(view: RecyclerView, settings: RecyclerComponent?) {
-    val oii = 5
-    val oikkk = oii + 7
-
     try {
         view.apply {
             settings?.let {
