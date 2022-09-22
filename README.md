@@ -52,7 +52,7 @@ The app module is the starting point to the app and works as the presentation la
 
 ## Stack
 - Coded in [Kotlin](https://kotlinlang.org)
-- UI and Android-related Libraries from [Android Jetpack](https://developer.android.com/jetpack)
+- UI and Android-related libraries from [Android Jetpack](https://developer.android.com/jetpack)
 - Network calls with [Retrofit](https://github.com/square/retrofit)
 - JSON parsing with [Moshi](https://github.com/square/moshi)
 - Concurrency with [Coroutines](https://kotlin.github.io/kotlinx.coroutines/)
