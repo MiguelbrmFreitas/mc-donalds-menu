@@ -60,7 +60,7 @@ The app module is the starting point to the app and works as the presentation la
 - Async image loading with [Glide](https://github.com/bumptech/glide) 
 
 ## Next steps
-- [ ] Create a theme for app layout.
+- [ ] Create a default theme for the app layout.
 
 - [ ] Room Database to persist data locally.
 
