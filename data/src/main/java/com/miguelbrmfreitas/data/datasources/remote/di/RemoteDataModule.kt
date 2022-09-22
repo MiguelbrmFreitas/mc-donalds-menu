@@ -1,6 +1,5 @@
 package com.miguelbrmfreitas.data.datasources.remote
 
-import android.app.appsearch.GetByDocumentIdRequest
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.miguelbrmfreitas.domain.repositories.McDonaldsRepository
 import com.miguelbrmfreitas.domain.usecases.GetMenusUseCase

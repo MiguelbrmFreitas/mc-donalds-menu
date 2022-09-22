@@ -1,6 +1,5 @@
 package com.miguelbrmfreitas.data.datasources.remote
 
-import com.miguelbrmfreitas.domain.entities.ItemEntity
 import com.miguelbrmfreitas.domain.repositories.McDonaldsRepository
 import com.miguelbrmfreitas.domain.repositories.ApiResult
 import com.miguelbrmfreitas.domain.entities.MenuEntity
@@ -23,22 +22,4 @@ class McDonaldsRepositoryImpl(private val mcDonaldsApi: McDonaldsApi) : McDonald
                 return@withContext ApiResult.Failure(Exception(response.message()))
             }
         }
-
-//    private fun convertItem(item: Item): ItemEntity {
-//        return ItemEntity(
-//            description = item.description,
-//            name = item.name,
-//            url = item.url,
-//            price = item.price
-//        )
-//    }
-//
-//    private fun convertMenu(menu: Menu): MenuEntity {
-//        val items = menu.items.map { convertItem(it) }
-//
-//        return MenuEntity(
-//            items = items,
-//            name = menu.name
-//        )
-//    }
 }

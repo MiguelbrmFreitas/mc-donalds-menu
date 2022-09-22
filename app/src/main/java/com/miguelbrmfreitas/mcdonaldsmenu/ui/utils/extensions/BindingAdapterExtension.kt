@@ -18,7 +18,6 @@ fun setAdapter(view: RecyclerView, settings: RecyclerComponent?) {
                     }
                 }
                 this.adapter = it.adapter
-
             }
         }
     } catch (e: Exception) {

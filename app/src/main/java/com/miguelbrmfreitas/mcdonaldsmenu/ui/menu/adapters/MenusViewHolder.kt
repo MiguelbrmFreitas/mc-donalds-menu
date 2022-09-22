@@ -1,6 +1,5 @@
 package com.miguelbrmfreitas.mcdonaldsmenu.ui.menu.adapters
 
-import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.miguelbrmfreitas.domain.entities.MenuEntity
 import com.miguelbrmfreitas.mcdonaldsmenu.databinding.AdapterMenuBinding
