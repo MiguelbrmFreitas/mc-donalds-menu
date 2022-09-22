@@ -47,7 +47,7 @@ The app module is the starting point to the app and works as the presentation la
 - Adapters: implementation of RecyclerView.Adapter and manages all the logic to deal with RecyclerView lists. It has rules to bind each element of an array (with DataBinding) at every position
 - MainApplication: the start of everything. Deals with app-wide state and injects the dependency with Koin from AppModule and RemoteDataModule
 - Base classes: abstract classes to be reused by activities and viewmodels
-- Extensions: takes advantaged from Kotlin extensions features to write custom 
+- Extensions: takes advantaged from Kotlin extensions features to write custom functions to existing classes
 
 
 ## Stack
