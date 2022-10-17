@@ -1,8 +1,6 @@
 package com.miguelbrmfreitas.domain.repositories
 
 import java.lang.Exception
-import java.lang.reflect.ParameterizedType
-import java.lang.reflect.Type
 
 sealed class ApiResult<out R> {
     data class Success<out T>(val data: T) : ApiResult<T>()

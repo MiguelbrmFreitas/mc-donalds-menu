@@ -1,12 +1,10 @@
 package com.miguelbrmfreitas.mcdonaldsmenu.ui.base
 
 import android.os.Bundle
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import com.miguelbrmfreitas.mcdonaldsmenu.databinding.ActivityMenuListBinding
 
 
 abstract class BaseActivity<V : BaseViewModel> : AppCompatActivity()
@@ -16,7 +14,7 @@ abstract class BaseActivity<V : BaseViewModel> : AppCompatActivity()
 
     abstract val viewModel: V
 
-    private lateinit var binding: ActivityMenuListBinding
+    private lateinit var binding: ViewDataBinding
 
     abstract fun bindingVariable(): Int
 
